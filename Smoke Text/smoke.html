@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="smoke.css">
+    <title>Smoke Transition</title>
+</head>
+<body>
+    <section class="smokeText">
+        <p class="text">
+            Hello!
+            My name is Christopher, I am currently on an adventure to learn as much tricks about web development. I have alot to learn, but I am still very proud of my progress over the pass 3 months of practice. I hope you stay tuned to more adventures!!
+        </p>
+    </section>
+    
+    <script>
+        //How to change text into letters
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g,
+        "<span>$&</span>");
+
+
+        //Adding spans as the active class on hover
+        const letters = document.querySelectorAll('span');
+        for(let i=0; i<letters.length; i++){
+            letters[i].addEventListener("mouseover", function()
+            {
+                letters[i].classList.add('active')
+
+            })
+        }
+
+    </script>
+</body>
+</html> 
